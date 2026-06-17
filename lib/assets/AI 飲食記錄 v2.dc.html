@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+body{margin:0;}
+</style>
+</helmet>
+
+<div style="min-height:100%;background:#E9E9EC;padding:72px 72px 96px;font-family:'Noto Sans TC',-apple-system,system-ui,sans-serif;color:#1A1A17;">
+
+  <div style="max-width:760px;margin-bottom:64px;">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#fff;border-radius:100px;font-size:13px;font-weight:600;color:#6b6b70;margin-bottom:20px;">
+      <span style="width:7px;height:7px;border-radius:50%;background:#6B7A4F;"></span>AI 食物掃描記錄器 · Style B 編輯極簡
+    </div>
+    <h1 style="font-size:44px;line-height:1.1;font-weight:300;margin:0 0 16px;letter-spacing:-1px;">奶油色紙感的飲食筆記</h1>
+    <p style="font-size:17px;line-height:1.6;color:#6b6b70;margin:0;">單一橄欖綠、放大細體數字、底部導覽列。涵蓋記錄流程與身體數據(身高、體重、目標體重)。</p>
+  </div>
+
+  <div style="display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap;">
+
+    <!-- 0a · 歡迎 Landing -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#1A1A17;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#FAF8F3;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#000;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;color:#FAF8F3;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#FAF8F3"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#FAF8F3"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#FAF8F3"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#FAF8F3"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#FAF8F3" stroke-opacity=".5"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#FAF8F3"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#FAF8F3" opacity=".5"/></svg>
+          </div>
+        </div>
+
+        <div style="position:absolute;top:120px;left:26px;right:26px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:60px;">
+            <div style="width:34px;height:34px;border-radius:10px;background:#6B7A4F;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#FAF8F3" stroke-width="2"/></svg></div>
+            <span style="font-size:15px;font-weight:600;letter-spacing:.5px;">食誌 · AI 食記</span>
+          </div>
+          <div style="font-size:13px;font-weight:700;letter-spacing:2px;color:#A7A299;font-family:'Space Grotesk',sans-serif;margin-bottom:18px;">EAT · LOG · REACH</div>
+          <div style="font-size:46px;font-weight:300;line-height:1.18;letter-spacing:-1.5px;">掃一下,<br>記好每一餐,<br>走向目標體重。</div>
+        </div>
+
+        <div style="position:absolute;bottom:150px;left:26px;right:26px;display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;align-items:center;gap:14px;"><span style="font-size:13px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#6B7A4F;width:18px;">01</span><span style="font-size:15px;color:rgba(250,248,243,.85);">條碼或拍照,AI 在背景辨識</span></div>
+          <div style="height:1px;background:rgba(250,248,243,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;"><span style="font-size:13px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#6B7A4F;width:18px;">02</span><span style="font-size:15px;color:rgba(250,248,243,.85);">台灣飲食資料庫,份量一鍵確認</span></div>
+          <div style="height:1px;background:rgba(250,248,243,.12);"></div>
+          <div style="display:flex;align-items:center;gap:14px;"><span style="font-size:13px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#6B7A4F;width:18px;">03</span><span style="font-size:15px;color:rgba(250,248,243,.85);">設定目標日期,追蹤每週進度</span></div>
+        </div>
+
+        <div style="position:absolute;bottom:40px;left:26px;right:26px;display:flex;align-items:center;justify-content:center;gap:8px;padding:17px;background:#6B7A4F;border-radius:14px;">
+          <span style="color:#FAF8F3;font-size:17px;font-weight:600;">設定我的目標</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#FAF8F3;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">○ 首次啟動 · 歡迎</div>
+    </div>
+
+    <!-- 0b · 設定飲食目標 -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:104px;padding:14px 26px 0;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;color:#97928A;"><span style="color:#6B7A4F;">STEP 1</span><span>/ 1</span></div>
+          <div style="font-size:32px;font-weight:300;letter-spacing:-.5px;margin-bottom:4px;">設定飲食目標</div>
+          <div style="font-size:13px;color:#97928A;margin-bottom:24px;">這些之後都可以隨時調整</div>
+
+          <div style="display:flex;gap:10px;margin-bottom:8px;">
+            <div style="flex:1;border:1px solid #DAD5C8;border-radius:14px;padding:14px 16px;"><div style="font-size:12px;color:#97928A;margin-bottom:8px;">身高</div><div style="font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;">178 <span style="font-size:13px;color:#97928A;font-weight:400;">cm</span></div></div>
+            <div style="flex:1;border:1px solid #DAD5C8;border-radius:14px;padding:14px 16px;"><div style="font-size:12px;color:#97928A;margin-bottom:8px;">目前體重</div><div style="font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;">80.0 <span style="font-size:13px;color:#97928A;font-weight:400;">kg</span></div></div>
+          </div>
+          <div style="display:flex;gap:10px;margin-bottom:24px;">
+            <div style="flex:1;border:1.5px solid #6B7A4F;border-radius:14px;padding:14px 16px;"><div style="font-size:12px;color:#6B7A4F;margin-bottom:8px;">目標體重</div><div style="font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#6B7A4F;">68.0 <span style="font-size:13px;color:#97928A;font-weight:400;">kg</span></div></div>
+            <div style="flex:1;border:1px solid #DAD5C8;border-radius:14px;padding:14px 16px;"><div style="font-size:12px;color:#97928A;margin-bottom:8px;">目標日期</div><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">2026/9/30</div></div>
+          </div>
+
+          <!-- weekly estimate -->
+          <div style="background:#1A1A17;border-radius:20px;padding:22px 22px 20px;color:#FAF8F3;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
+              <div>
+                <div style="font-size:12px;color:rgba(250,248,243,.6);font-weight:700;letter-spacing:1px;font-family:'Space Grotesk',sans-serif;margin-bottom:8px;">每週估計減重</div>
+                <div style="display:flex;align-items:flex-end;gap:6px;"><span style="font-size:42px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-1px;line-height:.85;">0.8</span><span style="font-size:14px;color:rgba(250,248,243,.6);padding-bottom:5px;">kg / 週</span></div>
+              </div>
+              <div style="text-align:right;"><div style="font-size:12px;color:rgba(250,248,243,.6);margin-bottom:8px;">需減重</div><div style="font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#A8B98A;">−12.0 <span style="font-size:12px;color:rgba(250,248,243,.5);">kg</span></div></div>
+            </div>
+            <!-- healthy range bar -->
+            <div style="position:relative;height:6px;background:rgba(250,248,243,.14);border-radius:3px;margin-bottom:8px;">
+              <div style="position:absolute;left:25%;width:50%;top:0;bottom:0;background:rgba(168,185,138,.45);border-radius:3px;"></div>
+              <div style="position:absolute;left:40%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:#A8B98A;border:2px solid #1A1A17;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(250,248,243,.5);font-family:'Space Grotesk',sans-serif;"><span>0.5</span><span style="color:#A8B98A;font-weight:600;">健康範圍</span><span>1.0 kg</span></div>
+            <div style="height:1px;background:rgba(250,248,243,.12);margin:16px 0 14px;"></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:rgba(250,248,243,.7);">預估期間</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;">約 15 週 · 達標於 9/30</span></div>
+          </div>
+        </div>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 26px 32px;background:#FAF8F3;border-top:1px solid #E7E3D9;">
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:17px;background:#6B7A4F;border-radius:14px;"><span style="color:#FAF8F3;font-size:17px;font-weight:600;">開始記錄</span></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">○ 首次啟動 · 設定目標(每週估算)</div>
+    </div>
+
+
+    <!-- 1 · 當日總覽 + navbar -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:96px;padding:14px 26px 0;overflow:hidden;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:2px;color:#97928A;font-family:'Space Grotesk',sans-serif;">JUN 17 · TUE</div>
+          <div style="font-size:34px;font-weight:300;letter-spacing:-.5px;margin:2px 0 24px;">今天</div>
+
+          <div style="display:flex;align-items:flex-end;gap:8px;">
+            <div style="font-size:60px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-2px;line-height:.85;">1,240</div>
+            <div style="font-size:15px;color:#97928A;padding-bottom:8px;font-family:'Space Grotesk',sans-serif;">/ 2,000 KCAL</div>
+          </div>
+          <div style="height:3px;background:#E7E3D9;border-radius:2px;margin:18px 0 6px;overflow:hidden;"><div style="width:62%;height:100%;background:#6B7A4F;"></div></div>
+          <div style="font-size:13px;color:#97928A;margin-bottom:28px;">還可以吃 <span style="color:#1A1A17;font-weight:600;font-family:'Space Grotesk',sans-serif;">760</span> kcal</div>
+
+          <div style="display:flex;flex-direction:column;gap:15px;margin-bottom:28px;">
+            <div><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;"><span style="font-size:14px;font-weight:500;">蛋白質</span><span style="font-size:14px;color:#97928A;font-family:'Space Grotesk',sans-serif;"><span style="color:#1A1A17;font-weight:600;">58</span> / 100 g</span></div><div style="height:3px;background:#E7E3D9;border-radius:2px;overflow:hidden;"><div style="width:58%;height:100%;background:#6B7A4F;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;"><span style="font-size:14px;font-weight:500;">碳水</span><span style="font-size:14px;color:#97928A;font-family:'Space Grotesk',sans-serif;"><span style="color:#1A1A17;font-weight:600;">138</span> / 250 g</span></div><div style="height:3px;background:#E7E3D9;border-radius:2px;overflow:hidden;"><div style="width:55%;height:100%;background:#6B7A4F;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;"><span style="font-size:14px;font-weight:500;">脂肪</span><span style="font-size:14px;color:#97928A;font-family:'Space Grotesk',sans-serif;"><span style="color:#1A1A17;font-weight:600;">41</span> / 65 g</span></div><div style="height:3px;background:#E7E3D9;border-radius:2px;overflow:hidden;"><div style="width:63%;height:100%;background:#6B7A4F;"></div></div></div>
+          </div>
+
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin-bottom:4px;">MEALS</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:15px 0 15px 14px;border-bottom:1px solid #E7E3D9;border-left:2px solid #6B7A4F;margin-left:-14px;">
+            <div><div style="font-size:15px;font-weight:600;">午餐 <span style="font-size:12px;color:#97928A;font-weight:400;font-family:'Space Grotesk',sans-serif;">12:30</span></div><div style="font-size:13px;color:#97928A;margin-top:3px;">白飯 50g、雞排 100g、炒青菜 50g</div></div>
+            <div style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;">360</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:15px 0;border-bottom:1px solid #E7E3D9;">
+            <div><div style="font-size:15px;font-weight:600;">早餐 <span style="font-size:12px;color:#97928A;font-weight:400;font-family:'Space Grotesk',sans-serif;">08:10</span></div><div style="font-size:13px;color:#97928A;margin-top:3px;">燕麥粥、美式咖啡</div></div>
+            <div style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#97928A;">420</div>
+          </div>
+        </div>
+
+        <!-- NAVBAR (今天 active) -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:rgba(250,248,243,.94);backdrop-filter:blur(12px);border-top:1px solid #E7E3D9;display:flex;align-items:flex-start;justify-content:space-around;padding:11px 16px 0;z-index:7;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="#6B7A4F" stroke-width="1.8"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="#6B7A4F" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:600;color:#6B7A4F;">今天</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V11M12 19V5M19 19v-6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#A7A299;">統計</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:54px;">
+            <div style="margin-top:-20px;width:56px;height:56px;border-radius:50%;background:#6B7A4F;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(107,122,79,.42);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#FAF8F3" stroke-width="2"/></svg>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4v16M5 4c2.5 0 2.5 5 0 5M9 4v6a2 2 0 0 0 4 0V4" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M17.5 11.5V20" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#A7A299;">食物</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="font-size:10px;font-weight:500;color:#A7A299;">我</span>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">① 當日總覽 · 含導覽列</div>
+    </div>
+        <!-- 2 · 掃描 -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#15150F;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#000;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;color:#fff;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#fff"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#fff"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#fff"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#fff" stroke-opacity=".5"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#fff"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#fff" opacity=".5"/></svg>
+          </div>
+        </div>
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#22221a 0 14px,#1b1b15 14px 28px);"></div>
+        <div style="position:absolute;top:120px;left:0;right:0;text-align:center;color:rgba(255,255,255,.35);font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:1px;">CAMERA LIVE</div>
+        <div style="position:absolute;top:80px;left:0;right:0;display:flex;justify-content:center;z-index:5;">
+          <div style="padding:8px 18px;background:rgba(0,0,0,.4);border-radius:4px;color:#fff;font-size:14px;font-weight:500;letter-spacing:.3px;">對準便當條碼或整盤食物</div>
+        </div>
+        <div style="position:absolute;top:300px;left:50px;right:50px;height:230px;z-index:5;">
+          <div style="position:absolute;top:0;left:0;width:38px;height:38px;border-top:3px solid #C9CCBC;border-left:3px solid #C9CCBC;"></div>
+          <div style="position:absolute;top:0;right:0;width:38px;height:38px;border-top:3px solid #C9CCBC;border-right:3px solid #C9CCBC;"></div>
+          <div style="position:absolute;bottom:0;left:0;width:38px;height:38px;border-bottom:3px solid #C9CCBC;border-left:3px solid #C9CCBC;"></div>
+          <div style="position:absolute;bottom:0;right:0;width:38px;height:38px;border-bottom:3px solid #C9CCBC;border-right:3px solid #C9CCBC;"></div>
+          <div style="position:absolute;top:50%;left:0;right:0;height:1.5px;background:#C9CCBC;"></div>
+        </div>
+        <div style="position:absolute;bottom:150px;left:0;right:0;display:flex;justify-content:center;gap:28px;z-index:5;font-family:'Space Grotesk',sans-serif;letter-spacing:1px;font-size:13px;">
+          <span style="color:#fff;font-weight:600;border-bottom:2px solid #C9CCBC;padding-bottom:4px;">條碼</span>
+          <span style="color:rgba(255,255,255,.5);padding-bottom:4px;">拍照</span>
+          <span style="color:rgba(255,255,255,.5);padding-bottom:4px;">搜尋</span>
+        </div>
+        <div style="position:absolute;bottom:46px;left:50%;transform:translateX(-50%);width:74px;height:74px;border-radius:50%;border:3px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;z-index:5;">
+          <div style="width:58px;height:58px;border-radius:50%;background:#C9CCBC;"></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#fff;opacity:.85;z-index:6;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">② 掃描 · 條碼／拍照</div>
+    </div>
+
+    <!-- 3 · AI 辨識確認 -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:100px;padding:14px 26px 0;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:6px;height:6px;border-radius:50%;background:#6B7A4F;"></span><span style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#6B7A4F;font-family:'Space Grotesk',sans-serif;">AI 已辨識 · 3 項</span></div>
+          <div style="font-size:30px;font-weight:300;letter-spacing:-.5px;margin-bottom:4px;">雞排便當</div>
+          <div style="font-size:13px;color:#97928A;margin-bottom:24px;">點任一項可調整份量</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">白飯</div><div style="font-size:12px;color:#97928A;margin-top:2px;font-family:'Space Grotesk',sans-serif;">65 KCAL</div></div><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">50 <span style="font-size:12px;color:#97928A;font-weight:400;">g</span></div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">雞排</div><div style="font-size:12px;color:#97928A;margin-top:2px;font-family:'Space Grotesk',sans-serif;">250 KCAL</div></div><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">100 <span style="font-size:12px;color:#97928A;font-weight:400;">g</span></div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #E7E3D9;border-bottom:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">炒青菜</div><div style="font-size:12px;color:#97928A;margin-top:2px;font-family:'Space Grotesk',sans-serif;">45 KCAL</div></div><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">50 <span style="font-size:12px;color:#97928A;font-weight:400;">g</span></div></div>
+          <div style="margin-top:26px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;"><span style="font-size:13px;font-weight:700;letter-spacing:1.5px;color:#97928A;font-family:'Space Grotesk',sans-serif;">這一餐 / 每日</span><span style="font-size:30px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-1px;">360 <span style="font-size:13px;color:#97928A;">KCAL · 18%</span></span></div>
+            <div style="display:flex;flex-direction:column;gap:13px;">
+              <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span>蛋白 23g</span><span style="color:#97928A;font-family:'Space Grotesk',sans-serif;">佔 23%</span></div><div style="height:3px;background:#E7E3D9;border-radius:2px;overflow:hidden;"><div style="width:23%;height:100%;background:#6B7A4F;"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span>碳水 27g</span><span style="color:#97928A;font-family:'Space Grotesk',sans-serif;">佔 11%</span></div><div style="height:3px;background:#E7E3D9;border-radius:2px;overflow:hidden;"><div style="width:11%;height:100%;background:#6B7A4F;"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span>脂肪 18g</span><span style="color:#97928A;font-family:'Space Grotesk',sans-serif;">佔 28%</span></div><div style="height:3px;background:#E7E3D9;border-radius:2px;overflow:hidden;"><div style="width:28%;height:100%;background:#6B7A4F;"></div></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 26px 30px;background:#FAF8F3;border-top:1px solid #E7E3D9;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="display:flex;align-items:center;gap:8px;padding:14px 18px;border:1px solid #DAD5C8;border-radius:14px;"><span style="font-size:13px;color:#97928A;">時段</span><span style="font-size:15px;font-weight:600;">午餐</span></div>
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:15px;background:#6B7A4F;border-radius:14px;"><span style="color:#fff;font-size:16px;font-weight:600;">確認記錄</span></div>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">③ AI 辨識 · 確認記錄</div>
+    </div>
+
+    <!-- 4 · 手動搜尋 + navbar -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:90px;padding:14px 26px 0;overflow:hidden;">
+          <div style="font-size:30px;font-weight:300;letter-spacing:-.5px;padding:6px 0 18px;">搜尋食物</div>
+          <div style="display:flex;align-items:center;gap:10px;border-bottom:1.5px solid #1A1A17;padding:0 2px 12px;margin-bottom:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#1A1A17" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="#1A1A17" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:18px;">雞排</span><span style="width:1.5px;height:18px;background:#6B7A4F;"></span>
+          </div>
+          <div style="font-size:11px;color:#97928A;font-family:'Space Grotesk',monospace;letter-spacing:.3px;margin-bottom:20px;">SOURCE · 台灣食品營養成分資料庫</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-top:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">雞排（去骨）</div><div style="font-size:12px;color:#97928A;margin-top:2px;">每 100g · 蛋白 20 · 碳水 10 · 脂肪 15</div></div><div style="text-align:right;"><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">250</div><div style="font-size:10px;color:#97928A;font-family:'Space Grotesk',sans-serif;">KCAL</div></div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-top:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">雞排（帶骨）</div><div style="font-size:12px;color:#97928A;margin-top:2px;">每 100g · 蛋白 18 · 碳水 11 · 脂肪 17</div></div><div style="text-align:right;"><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">272</div><div style="font-size:10px;color:#97928A;font-family:'Space Grotesk',sans-serif;">KCAL</div></div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-top:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">鹹酥雞</div><div style="font-size:12px;color:#97928A;margin-top:2px;">每 100g · 蛋白 19 · 碳水 14 · 脂肪 19</div></div><div style="text-align:right;"><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">295</div><div style="font-size:10px;color:#97928A;font-family:'Space Grotesk',sans-serif;">KCAL</div></div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-top:1px solid #E7E3D9;border-bottom:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">雞胸肉（水煮）</div><div style="font-size:12px;color:#97928A;margin-top:2px;">每 100g · 蛋白 31 · 碳水 0 · 脂肪 4</div></div><div style="text-align:right;"><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">165</div><div style="font-size:10px;color:#97928A;font-family:'Space Grotesk',sans-serif;">KCAL</div></div></div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin:24px 0 14px;">最近常吃</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="padding:8px 14px;border:1px solid #DAD5C8;border-radius:100px;font-size:13px;">雞排便當</span>
+            <span style="padding:8px 14px;border:1px solid #DAD5C8;border-radius:100px;font-size:13px;">珍珠奶茶</span>
+            <span style="padding:8px 14px;border:1px solid #DAD5C8;border-radius:100px;font-size:13px;">滷肉飯</span>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:rgba(250,248,243,.94);backdrop-filter:blur(12px);border-top:1px solid #E7E3D9;display:flex;align-items:flex-start;justify-content:space-around;padding:11px 16px 0;z-index:7;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="#A7A299" stroke-width="1.8"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">今天</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V11M12 19V5M19 19v-6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">統計</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:54px;"><div style="margin-top:-20px;width:56px;height:56px;border-radius:50%;background:#6B7A4F;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(107,122,79,.42);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#FAF8F3" stroke-width="2"/></svg></div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4v16M5 4c2.5 0 2.5 5 0 5M9 4v6a2 2 0 0 0 4 0V4" stroke="#6B7A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="8" r="3.5" stroke="#6B7A4F" stroke-width="1.8"/><path d="M17.5 11.5V20" stroke="#6B7A4F" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:600;color:#6B7A4F;">食物</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">我</span></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">④ 手動搜尋 · 台灣資料庫</div>
+    </div>
+
+    <!-- 5 · 選份量 -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;inset:0;background:rgba(26,26,23,.35);"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;height:610px;background:#FAF8F3;border-radius:30px 30px 0 0;padding:14px 26px 30px;box-shadow:0 -16px 40px rgba(0,0,0,.18);">
+          <div style="width:40px;height:5px;border-radius:3px;background:#DAD5C8;margin:0 auto 24px;"></div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#6B7A4F;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;">台灣資料庫</div>
+          <div style="font-size:28px;font-weight:300;letter-spacing:-.5px;margin-bottom:24px;">雞排（去骨）</div>
+          <div style="display:flex;align-items:flex-end;gap:8px;border-bottom:1px solid #E7E3D9;padding-bottom:22px;margin-bottom:22px;">
+            <div style="font-size:58px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-2px;line-height:.85;">250</div>
+            <div style="font-size:15px;color:#97928A;padding-bottom:6px;font-family:'Space Grotesk',sans-serif;">KCAL</div>
+            <div style="margin-left:auto;display:flex;gap:18px;text-align:right;padding-bottom:4px;">
+              <div><div style="font-size:11px;color:#97928A;">蛋白</div><div style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;">20g</div></div>
+              <div><div style="font-size:11px;color:#97928A;">碳水</div><div style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;">10g</div></div>
+              <div><div style="font-size:11px;color:#97928A;">脂肪</div><div style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;">15g</div></div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <span style="font-size:15px;font-weight:600;">份量</span>
+            <div style="display:flex;align-items:center;gap:20px;"><span style="width:36px;height:36px;border-radius:50%;border:1px solid #DAD5C8;display:flex;align-items:center;justify-content:center;font-size:22px;color:#97928A;">−</span><span style="font-size:26px;font-weight:600;font-family:'Space Grotesk',sans-serif;">100 <span style="font-size:14px;color:#97928A;font-weight:400;">g</span></span><span style="width:36px;height:36px;border-radius:50%;background:#6B7A4F;display:flex;align-items:center;justify-content:center;font-size:21px;color:#fff;">+</span></div>
+          </div>
+          <div style="height:3px;background:#E7E3D9;border-radius:2px;margin-bottom:8px;position:relative;"><div style="position:absolute;left:0;top:0;height:100%;width:40%;background:#6B7A4F;border-radius:2px;"></div><div style="position:absolute;left:40%;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:#FAF8F3;border:2px solid #6B7A4F;"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#97928A;font-family:'Space Grotesk',monospace;margin-bottom:24px;"><span>0g</span><span>250g</span></div>
+          <div style="display:flex;gap:8px;margin-bottom:28px;">
+            <span style="flex:1;text-align:center;padding:13px 0;border-radius:12px;background:#6B7A4F;color:#fff;font-size:14px;font-weight:600;">一份 100g</span>
+            <span style="flex:1;text-align:center;padding:13px 0;border-radius:12px;border:1px solid #DAD5C8;font-size:14px;">半份 50g</span>
+            <span style="flex:1;text-align:center;padding:13px 0;border-radius:12px;border:1px solid #DAD5C8;font-size:14px;">大份 150g</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;padding:17px;background:#1A1A17;border-radius:14px;"><span style="color:#FAF8F3;font-size:17px;font-weight:600;">加入午餐</span></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:6;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">⑤ 選份量 · 加入記錄</div>
+    </div>
+
+    <!-- 6 · 身體數據 + navbar -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:90px;padding:14px 26px 0;overflow:hidden;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:2px;color:#97928A;font-family:'Space Grotesk',sans-serif;">MY BODY</div>
+          <div style="font-size:34px;font-weight:300;letter-spacing:-.5px;margin:2px 0 24px;">身體數據</div>
+
+          <!-- weight hero + goal -->
+          <div style="display:flex;align-items:flex-end;gap:8px;">
+            <div style="font-size:60px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-2px;line-height:.85;">72.5</div>
+            <div style="font-size:15px;color:#97928A;padding-bottom:8px;font-family:'Space Grotesk',sans-serif;">KG · 目前體重</div>
+          </div>
+          <div style="height:3px;background:#E7E3D9;border-radius:2px;margin:18px 0 6px;overflow:hidden;position:relative;"><div style="width:64%;height:100%;background:#6B7A4F;"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin-bottom:8px;"><span>目標 68.0</span><span>起點 80.0 KG</span></div>
+          <div style="font-size:13px;color:#97928A;margin-bottom:28px;">距離目標還有 <span style="color:#6B7A4F;font-weight:600;font-family:'Space Grotesk',sans-serif;">4.5 kg</span> · 已減 7.5 kg</div>
+
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin-bottom:4px;">資料</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #E7E3D9;">
+            <span style="font-size:16px;">身高</span>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;font-weight:600;font-family:'Space Grotesk',sans-serif;">178 <span style="font-size:13px;color:#97928A;font-weight:400;">cm</span></span><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #E7E3D9;">
+            <span style="font-size:16px;">目前體重</span>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;font-weight:600;font-family:'Space Grotesk',sans-serif;">72.5 <span style="font-size:13px;color:#97928A;font-weight:400;">kg</span></span><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0 18px 14px;border-bottom:1px solid #E7E3D9;border-left:2px solid #6B7A4F;margin-left:-14px;">
+            <span style="font-size:16px;font-weight:600;">目標體重</span>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#6B7A4F;">68.0 <span style="font-size:13px;color:#97928A;font-weight:400;">kg</span></span><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #E7E3D9;">
+            <span style="font-size:16px;">目標日期</span>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;font-weight:600;font-family:'Space Grotesk',sans-serif;">2026/9/30 <span style="font-size:13px;color:#97928A;font-weight:400;">· 剩 9 週</span></span><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #E7E3D9;">
+            <span style="font-size:16px;">每日熱量目標</span>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:20px;font-weight:600;font-family:'Space Grotesk',sans-serif;">2,000 <span style="font-size:13px;color:#97928A;font-weight:400;">kcal</span></span><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:24px;padding:15px;border:1px solid #DAD5C8;border-radius:14px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#6B7A4F" stroke-width="2" stroke-linecap="round"/></svg>
+            <span style="font-size:15px;font-weight:600;color:#6B7A4F;">記錄今天的體重</span>
+          </div>
+        </div>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:rgba(250,248,243,.94);backdrop-filter:blur(12px);border-top:1px solid #E7E3D9;display:flex;align-items:flex-start;justify-content:space-around;padding:11px 16px 0;z-index:7;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="#A7A299" stroke-width="1.8"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">今天</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V11M12 19V5M19 19v-6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">統計</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:54px;"><div style="margin-top:-20px;width:56px;height:56px;border-radius:50%;background:#6B7A4F;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(107,122,79,.42);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#FAF8F3" stroke-width="2"/></svg></div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4v16M5 4c2.5 0 2.5 5 0 5M9 4v6a2 2 0 0 0 4 0V4" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M17.5 11.5V20" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">食物</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#6B7A4F" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#6B7A4F" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:600;color:#6B7A4F;">我</span></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">⑥ 身體數據 · 身高／體重／目標</div>
+    </div>
+
+    <!-- 7 · 統計 日檢視 · 24h 時間圖 -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:90px;padding:14px 26px 0;overflow:hidden;">
+          <div style="font-size:30px;font-weight:300;letter-spacing:-.5px;margin-bottom:16px;">餐點檢視</div>
+          <!-- segmented -->
+          <div style="display:flex;background:#ECEAE2;border-radius:12px;padding:4px;margin-bottom:18px;">
+            <span style="flex:1;text-align:center;padding:9px 0;border-radius:9px;background:#FAF8F3;font-size:14px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08);">日</span>
+            <span style="flex:1;text-align:center;padding:9px 0;font-size:14px;font-weight:500;color:#97928A;">週</span>
+            <span style="flex:1;text-align:center;padding:9px 0;font-size:14px;font-weight:500;color:#97928A;">月</span>
+          </div>
+          <!-- date + total -->
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="display:flex;align-items:center;gap:14px;"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6l5 5" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:15px;font-weight:600;">6月17日 週二</span><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">1,240 <span style="font-size:12px;color:#97928A;font-weight:400;">kcal</span></span>
+          </div>
+          <div style="font-size:12px;color:#97928A;margin-bottom:22px;font-family:'Space Grotesk',sans-serif;">P 58 · C 138 · F 41 g</div>
+
+          <!-- hourly grid -->
+          <div style="font-size:11px;color:#97928A;margin-bottom:14px;">點任一小時的空格,即可在該時間新增餐點</div>
+          <div style="position:relative;height:514px;margin-left:42px;">
+            <!-- hour gridlines -->
+            <div style="position:absolute;left:0;right:0;top:0;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:-6px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">08:00</span>
+            <div style="position:absolute;left:0;right:0;top:42px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:36px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">09:00</span>
+            <div style="position:absolute;left:0;right:0;top:84px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:78px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">10:00</span>
+            <div style="position:absolute;left:0;right:0;top:126px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:120px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">11:00</span>
+            <div style="position:absolute;left:0;right:0;top:168px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:162px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">12:00</span>
+            <div style="position:absolute;left:0;right:0;top:210px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:204px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">13:00</span>
+            <div style="position:absolute;left:0;right:0;top:252px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:246px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">14:00</span>
+            <div style="position:absolute;left:0;right:0;top:294px;border-top:1px solid #EDEAE0;"></div>
+            <div style="position:absolute;left:0;right:0;top:336px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:330px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">16:00</span>
+            <div style="position:absolute;left:0;right:0;top:378px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:372px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">17:00</span>
+            <div style="position:absolute;left:0;right:0;top:420px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:414px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">18:00</span>
+            <div style="position:absolute;left:0;right:0;top:462px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:456px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">19:00</span>
+            <div style="position:absolute;left:0;right:0;top:504px;border-top:1px solid #EDEAE0;"></div><span style="position:absolute;left:-42px;top:498px;width:34px;text-align:right;font-size:10px;color:#B6B1A6;font-family:'Space Grotesk',sans-serif;">20:00</span>
+
+            <!-- 早餐 08:10 -->
+            <div style="position:absolute;top:8px;left:6px;right:0;height:50px;background:#FAF8F3;border:1px solid #E7E3D9;border-left:3px solid #97A678;border-radius:12px;padding:8px 13px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;"><div style="font-size:14px;font-weight:600;">早餐 <span style="font-size:11px;color:#97928A;font-weight:400;">08:10 · 燕麥粥、咖啡</span></div><span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">420</span></div>
+              <div style="display:flex;height:5px;border-radius:3px;overflow:hidden;"><div style="width:15%;background:#6B7A4F;"></div><div style="width:73%;background:#9DAA7E;"></div><div style="width:12%;background:#C8CEB6;"></div></div>
+            </div>
+
+            <!-- 午餐 12:30 -->
+            <div style="position:absolute;top:189px;left:6px;right:0;height:58px;background:#FAF8F3;border:1.5px solid #6B7A4F;border-radius:12px;padding:9px 13px;box-shadow:0 6px 16px rgba(107,122,79,.12);">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;"><div style="font-size:14px;font-weight:600;">午餐 · 雞排便當 <span style="font-size:11px;color:#97928A;font-weight:400;">12:30</span></div><span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">360</span></div>
+              <div style="display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:6px;"><div style="width:34%;background:#6B7A4F;"></div><div style="width:40%;background:#9DAA7E;"></div><div style="width:26%;background:#C8CEB6;"></div></div>
+              <div style="font-size:10px;color:#97928A;font-family:'Space Grotesk',sans-serif;">P23 · C27 · F18 g · 點擊看明細 ›</div>
+            </div>
+
+            <!-- now line 15:00 · hover row = olive line only, click opens modal -->
+            <div style="position:absolute;top:294px;left:0;right:0;height:42px;background:rgba(107,122,79,.05);border-radius:8px;z-index:2;"></div>
+            <div style="position:absolute;top:294px;left:-42px;right:0;display:flex;align-items:center;z-index:4;">
+              <span style="font-size:10px;font-weight:700;color:#6B7A4F;font-family:'Space Grotesk',sans-serif;width:34px;text-align:right;">15:00</span>
+              <span style="width:7px;height:7px;border-radius:50%;background:#6B7A4F;margin:0 2px;flex:none;"></span>
+              <span style="flex:1;height:1.5px;background:#6B7A4F;"></span>
+              <span style="font-size:9px;font-weight:700;letter-spacing:.5px;color:#FAF8F3;background:#6B7A4F;border-radius:4px;padding:2px 6px;font-family:'Space Grotesk',sans-serif;flex:none;">現在</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:rgba(250,248,243,.94);backdrop-filter:blur(12px);border-top:1px solid #E7E3D9;display:flex;align-items:flex-start;justify-content:space-around;padding:11px 16px 0;z-index:7;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="#A7A299" stroke-width="1.8"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">今天</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V11M12 19V5M19 19v-6" stroke="#6B7A4F" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:600;color:#6B7A4F;">統計</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:54px;"><div style="margin-top:-20px;width:56px;height:56px;border-radius:50%;background:#6B7A4F;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(107,122,79,.42);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#FAF8F3" stroke-width="2"/></svg></div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4v16M5 4c2.5 0 2.5 5 0 5M9 4v6a2 2 0 0 0 4 0V4" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M17.5 11.5V20" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">食物</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">我</span></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">⑦ 統計 · 日（每小時時間軸 · 點空格新增）</div>
+    </div>
+
+    <!-- 8 · 餐點詳細 -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;inset:0;background:rgba(26,26,23,.35);"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;height:680px;background:#FAF8F3;border-radius:30px 30px 0 0;padding:14px 26px 30px;box-shadow:0 -16px 40px rgba(0,0,0,.18);overflow:hidden;">
+          <div style="width:40px;height:5px;border-radius:3px;background:#DAD5C8;margin:0 auto 22px;"></div>
+
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+            <div style="width:62px;height:62px;border-radius:16px;background:repeating-linear-gradient(135deg,#EFEDE4 0 8px,#E7E3D6 8px 16px);flex:none;display:flex;align-items:center;justify-content:center;color:#A7A299;font-size:9px;font-family:'Space Grotesk',monospace;">便當</div>
+            <div style="flex:1;"><div style="font-size:12px;font-weight:700;letter-spacing:1px;color:#6B7A4F;font-family:'Space Grotesk',sans-serif;">午餐 · 12:30</div><div style="font-size:24px;font-weight:300;letter-spacing:-.5px;margin-top:2px;">雞排便當</div></div>
+          </div>
+
+          <div style="display:flex;align-items:flex-end;gap:8px;border-bottom:1px solid #E7E3D9;padding-bottom:20px;margin-bottom:20px;">
+            <div style="font-size:54px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-2px;line-height:.85;">360</div>
+            <div style="font-size:14px;color:#97928A;padding-bottom:6px;font-family:'Space Grotesk',sans-serif;">KCAL · 佔每日 18%</div>
+          </div>
+
+          <!-- macro split -->
+          <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;margin-bottom:12px;"><div style="width:34%;background:#6B7A4F;"></div><div style="width:40%;background:#9DAA7E;"></div><div style="width:26%;background:#C8CEB6;"></div></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:24px;">
+            <div style="display:flex;align-items:center;gap:7px;"><span style="width:9px;height:9px;border-radius:3px;background:#6B7A4F;"></span><span style="font-size:13px;">蛋白 <span style="font-weight:600;font-family:'Space Grotesk',sans-serif;">23g</span></span></div>
+            <div style="display:flex;align-items:center;gap:7px;"><span style="width:9px;height:9px;border-radius:3px;background:#9DAA7E;"></span><span style="font-size:13px;">碳水 <span style="font-weight:600;font-family:'Space Grotesk',sans-serif;">27g</span></span></div>
+            <div style="display:flex;align-items:center;gap:7px;"><span style="width:9px;height:9px;border-radius:3px;background:#C8CEB6;"></span><span style="font-size:13px;">脂肪 <span style="font-weight:600;font-family:'Space Grotesk',sans-serif;">18g</span></span></div>
+          </div>
+
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin-bottom:4px;">內容 · 3 項</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">白飯</div><div style="font-size:12px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin-top:2px;">50 g</div></div><span style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;">65</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">雞排</div><div style="font-size:12px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin-top:2px;">100 g</div></div><span style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;">250</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #E7E3D9;"><div><div style="font-size:16px;font-weight:600;">炒青菜</div><div style="font-size:12px;color:#97928A;font-family:'Space Grotesk',sans-serif;margin-top:2px;">50 g</div></div><span style="font-size:16px;font-weight:600;font-family:'Space Grotesk',sans-serif;">45</span></div>
+
+          <div style="display:flex;gap:10px;margin-top:24px;">
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:15px;border:1px solid #DAD5C8;border-radius:14px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 20h4L18 10l-4-4L4 16v4z" stroke="#1A1A17" stroke-width="1.8" stroke-linejoin="round"/></svg><span style="font-size:15px;font-weight:600;">編輯</span></div>
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:15px;background:#1A1A17;border-radius:14px;"><span style="color:#FAF8F3;font-size:15px;font-weight:600;">完成</span></div>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:6;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">⑧ 餐點詳細（點擊區塊）</div>
+    </div>
+
+    <!-- 9 · 統計 週檢視 · bar chart -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:90px;padding:14px 26px 0;overflow:hidden;">
+          <div style="font-size:30px;font-weight:300;letter-spacing:-.5px;margin-bottom:16px;">餐點檢視</div>
+          <div style="display:flex;background:#ECEAE2;border-radius:12px;padding:4px;margin-bottom:20px;">
+            <span style="flex:1;text-align:center;padding:9px 0;font-size:14px;font-weight:500;color:#97928A;">日</span>
+            <span style="flex:1;text-align:center;padding:9px 0;border-radius:9px;background:#FAF8F3;font-size:14px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08);">週</span>
+            <span style="flex:1;text-align:center;padding:9px 0;font-size:14px;font-weight:500;color:#97928A;">月</span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6l5 5" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:15px;font-weight:600;">6/15 – 6/21</span><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+          <div style="display:flex;align-items:flex-end;gap:8px;margin-bottom:4px;"><span style="font-size:48px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-1.5px;line-height:.85;">1,640</span><span style="font-size:14px;color:#97928A;padding-bottom:6px;font-family:'Space Grotesk',sans-serif;">平均 kcal / 日</span></div>
+          <div style="font-size:13px;color:#97928A;margin-bottom:24px;">達標 <span style="color:#6B7A4F;font-weight:600;font-family:'Space Grotesk',sans-serif;">5 / 7</span> 天 · 目標 2,000 kcal</div>
+
+          <!-- bar chart -->
+          <div style="position:relative;height:188px;margin-bottom:10px;">
+            <div style="position:absolute;left:0;right:0;top:18px;border-top:1.5px dashed #C9CCBC;"></div>
+            <span style="position:absolute;right:0;top:6px;font-size:10px;color:#A7A299;font-family:'Space Grotesk',sans-serif;background:#FAF8F3;padding-left:4px;">目標 2000</span>
+            <div style="position:absolute;left:0;right:0;bottom:0;height:170px;display:flex;align-items:flex-end;justify-content:space-between;gap:9px;">
+              <div style="flex:1;height:62%;background:#C2CBAE;border-radius:5px 5px 0 0;"></div>
+              <div style="flex:1;height:71%;background:#C2CBAE;border-radius:5px 5px 0 0;"></div>
+              <div style="flex:1;height:79%;background:#9DAA7E;border-radius:5px 5px 0 0;"></div>
+              <div style="flex:1;height:68%;background:#C2CBAE;border-radius:5px 5px 0 0;"></div>
+              <div style="flex:1;height:86%;background:#9DAA7E;border-radius:5px 5px 0 0;"></div>
+              <div style="flex:1;height:54%;background:#6B7A4F;border-radius:5px 5px 0 0;position:relative;"><span style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:600;font-family:'Space Grotesk',sans-serif;">1,240</span></div>
+              <div style="flex:1;height:0%;background:#E7E3D9;border-radius:5px 5px 0 0;min-height:4px;"></div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:9px;margin-bottom:26px;">
+            <span style="flex:1;text-align:center;font-size:12px;color:#97928A;">一</span><span style="flex:1;text-align:center;font-size:12px;color:#97928A;">二</span><span style="flex:1;text-align:center;font-size:12px;color:#97928A;">三</span><span style="flex:1;text-align:center;font-size:12px;color:#97928A;">四</span><span style="flex:1;text-align:center;font-size:12px;color:#97928A;">五</span><span style="flex:1;text-align:center;font-size:12px;font-weight:700;color:#6B7A4F;">六</span><span style="flex:1;text-align:center;font-size:12px;color:#C4BFB4;">日</span>
+          </div>
+
+          <div style="display:flex;gap:10px;">
+            <div style="flex:1;border:1px solid #E7E3D9;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#97928A;margin-bottom:7px;">平均三大營養</div><div style="font-size:14px;font-weight:600;font-family:'Space Grotesk',sans-serif;">P72 · C198 · F58</div></div>
+            <div style="flex:1;border:1px solid #E7E3D9;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#97928A;margin-bottom:7px;">本週體重</div><div style="font-size:14px;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#6B7A4F;">−0.6 kg</div></div>
+          </div>
+        </div>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:rgba(250,248,243,.94);backdrop-filter:blur(12px);border-top:1px solid #E7E3D9;display:flex;align-items:flex-start;justify-content:space-around;padding:11px 16px 0;z-index:7;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="#A7A299" stroke-width="1.8"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">今天</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V11M12 19V5M19 19v-6" stroke="#6B7A4F" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:600;color:#6B7A4F;">統計</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:54px;"><div style="margin-top:-20px;width:56px;height:56px;border-radius:50%;background:#6B7A4F;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(107,122,79,.42);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#FAF8F3" stroke-width="2"/></svg></div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4v16M5 4c2.5 0 2.5 5 0 5M9 4v6a2 2 0 0 0 4 0V4" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M17.5 11.5V20" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">食物</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">我</span></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">⑨ 統計 · 週（長條圖）</div>
+    </div>
+
+    <!-- 10 · 統計 月檢視 · bar chart -->
+    <div style="display:flex;flex-direction:column;gap:18px;flex:none;">
+      <div style="position:relative;width:390px;height:844px;background:#FAF8F3;border-radius:48px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.04),0 22px 50px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.05);color:#1A1A17;">
+        <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:112px;height:33px;background:#1A1A17;border-radius:20px;z-index:8;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 9px;z-index:7;">
+          <span style="font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;">9:41</span>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1A1A17"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1A1A17"/><rect x="10" y="2" width="3" height="10" rx="1" fill="#1A1A17"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1A1A17"/></svg>
+            <svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3.2" fill="none" stroke="#1A1A17" stroke-opacity=".35"/><rect x="2" y="2" width="16.5" height="8" rx="1.6" fill="#1A1A17"/><rect x="24" y="4" width="2" height="4" rx="1" fill="#1A1A17" opacity=".4"/></svg>
+          </div>
+        </div>
+
+        <div style="position:absolute;top:62px;left:0;right:0;bottom:90px;padding:14px 26px 0;overflow:hidden;">
+          <div style="font-size:30px;font-weight:300;letter-spacing:-.5px;margin-bottom:16px;">餐點檢視</div>
+          <div style="display:flex;background:#ECEAE2;border-radius:12px;padding:4px;margin-bottom:20px;">
+            <span style="flex:1;text-align:center;padding:9px 0;font-size:14px;font-weight:500;color:#97928A;">日</span>
+            <span style="flex:1;text-align:center;padding:9px 0;font-size:14px;font-weight:500;color:#97928A;">週</span>
+            <span style="flex:1;text-align:center;padding:9px 0;border-radius:9px;background:#FAF8F3;font-size:14px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08);">月</span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6l5 5" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:15px;font-weight:600;">2026 年 6 月</span><svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="#C4BFB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+          <div style="display:flex;align-items:flex-end;gap:8px;margin-bottom:4px;"><span style="font-size:48px;font-weight:300;font-family:'Space Grotesk',sans-serif;letter-spacing:-1.5px;line-height:.85;">1,580</span><span style="font-size:14px;color:#97928A;padding-bottom:6px;font-family:'Space Grotesk',sans-serif;">平均 kcal / 日</span></div>
+          <div style="font-size:13px;color:#97928A;margin-bottom:24px;">已記錄 <span style="color:#1A1A17;font-weight:600;font-family:'Space Grotesk',sans-serif;">22</span> 天 · 達標 <span style="color:#6B7A4F;font-weight:600;font-family:'Space Grotesk',sans-serif;">16</span> 天</div>
+
+          <!-- daily bars -->
+          <div style="position:relative;height:150px;margin-bottom:10px;">
+            <div style="position:absolute;left:0;right:0;top:24px;border-top:1.5px dashed #C9CCBC;"></div>
+            <span style="position:absolute;right:0;top:12px;font-size:10px;color:#A7A299;font-family:'Space Grotesk',sans-serif;background:#FAF8F3;padding-left:4px;">2000</span>
+            <div style="position:absolute;left:0;right:0;bottom:0;height:130px;display:flex;align-items:flex-end;gap:2px;">
+              <div style="flex:1;height:58%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:72%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:81%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:66%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:90%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:48%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:77%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:62%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:84%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:70%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:55%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:88%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:95%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:60%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:74%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:82%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:50%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:78%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:64%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:86%;background:#9DAA7E;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:72%;background:#C2CBAE;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:54%;background:#6B7A4F;border-radius:2px 2px 0 0;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div><div style="flex:1;height:0;background:#E7E3D9;border-radius:2px 2px 0 0;min-height:3px;"></div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#A7A299;font-family:'Space Grotesk',sans-serif;margin-bottom:24px;"><span>1</span><span>8</span><span>15</span><span>22</span><span>30</span></div>
+
+          <div style="display:flex;gap:10px;">
+            <div style="flex:1;border:1px solid #E7E3D9;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#97928A;margin-bottom:7px;">達標率</div><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;">73<span style="font-size:12px;color:#97928A;">%</span></div></div>
+            <div style="flex:1;border:1px solid #E7E3D9;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#97928A;margin-bottom:7px;">本月體重</div><div style="font-size:18px;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#6B7A4F;">−2.1<span style="font-size:12px;color:#97928A;">kg</span></div></div>
+            <div style="flex:1;border:1px solid #E7E3D9;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#97928A;margin-bottom:7px;">最常吃</div><div style="font-size:14px;font-weight:600;">雞排便當</div></div>
+          </div>
+        </div>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:rgba(250,248,243,.94);backdrop-filter:blur(12px);border-top:1px solid #E7E3D9;display:flex;align-items:flex-start;justify-content:space-around;padding:11px 16px 0;z-index:7;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="3" stroke="#A7A299" stroke-width="1.8"/><path d="M3.5 9h17M8 3v3M16 3v3" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">今天</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V11M12 19V5M19 19v-6" stroke="#6B7A4F" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:600;color:#6B7A4F;">統計</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:54px;"><div style="margin-top:-20px;width:56px;height:56px;border-radius:50%;background:#6B7A4F;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(107,122,79,.42);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#FAF8F3" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#FAF8F3" stroke-width="2"/></svg></div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4v16M5 4c2.5 0 2.5 5 0 5M9 4v6a2 2 0 0 0 4 0V4" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M17.5 11.5V20" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">食物</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:54px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#A7A299" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#A7A299" stroke-width="1.8" stroke-linecap="round"/></svg><span style="font-size:10px;font-weight:500;color:#A7A299;">我</span></div>
+        </div>
+        <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1A1A17;opacity:.85;z-index:9;"></div>
+      </div>
+      <div style="font-size:13px;color:#8a8a90;text-align:center;font-weight:500;">⑩ 統計 · 月（長條圖）</div>
+    </div>
+
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
