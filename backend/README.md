@@ -1,98 +1,82 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 食誌 Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+食誌 App 的後端服務，基於 NestJS + Prisma + PostgreSQL。
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 技術棧
 
-## Description
+- **Framework**: NestJS 11
+- **ORM**: Prisma 7 (with `@prisma/adapter-pg`)
+- **Database**: PostgreSQL 16
+- **Auth**: better-auth (email + password)
+- **API Docs**: Swagger (`/api/docs`)
+- **Container**: Docker + Docker Compose
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
+## 快速開始
 
 ```bash
-$ npm install
+# 安裝依賴
+npm install
+
+# 啟動 PostgreSQL
+docker compose up postgres -d
+
+# 產生 Prisma client + 執行 migration
+npx prisma generate --schema=prisma/schema.prisma
+npx prisma migrate dev
+
+# 開發模式啟動
+npm run start:dev
 ```
 
-## Compile and run the project
+啟動後：
+- API: http://localhost:3000
+- Swagger UI: http://localhost:3000/api/docs
+- Health check: `GET /`
+
+## Docker Compose（完整環境）
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+docker compose up --build
 ```
 
-## Run tests
+包含 `backend` (port 3000) 和 `postgres` (port 5432) 兩個服務。
+
+## API 端點
+
+| 端點 | 方法 | 說明 |
+|------|------|------|
+| `/api/auth/login` | POST | 登入驗證，回傳 API Token |
+| `/api/food/search?q=` | GET | 食物名稱搜尋（TFDA + OFF） |
+| `/api/food/barcode/:code` | GET | 條碼查詢（OFF + FatSecret） |
+| `/api/recognize` | POST | 上傳食物圖片，回傳 AI 辨識結果 |
+| `/api/food-db/version` | GET | 精簡資料庫版本檢查 |
+| `/api/food-db/download` | GET | 下載精簡資料庫 |
+
+> 目前所有端點回傳 mock data，詳見 Swagger UI。
+
+## 專案結構
+
+```
+src/
+  main.ts                 # 應用程式入口 + Swagger 設定
+  app.module.ts           # 根模組
+  prisma/                 # PrismaService（全域共用）
+  auth/                   # 認證模組
+  food/                   # 食物搜尋 + 條碼查詢
+  recognize/              # AI 食物辨識
+  food-db/                # 離線精簡資料庫
+  lib/auth.ts             # better-auth 設定
+prisma/
+  schema.prisma           # 資料庫 schema（目前含 auth 相關表）
+  migrations/             # Prisma migrations
+```
+
+## 常用指令
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm run build             # 編譯 TypeScript
+npm run start:dev         # 開發模式（watch）
+npm run start:prod        # 生產模式
+npm run lint              # ESLint 檢查
+npm run test              # 執行測試
 ```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
