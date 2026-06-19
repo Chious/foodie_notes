@@ -1,0 +1,38 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+
+env:
+  # 前端專屬環境變數
+  MAGIC_CODE_API_KEY: ${{ secrets.MAGIC_CODE_API_KEY }}
+  FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+
+jobs:
+  build-and-distribute:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend   # 切換到前端目錄
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: npm install && npm run build
+
+      - name: Magic Code 觸發
+        run: |
+          # 你的 magicCode 觸發邏輯
+          curl -X POST https://api.magiccode.com/trigger \
+            -H "Authorization: Bearer $MAGIC_CODE_API_KEY"
+
+      - name: Firebase App Distribution
+        run: |
+          npm install -g firebase-tools
+          firebase appdistribution:distribute build/app.apk \
+            --app $FIREBASE_APP_ID \
+            --groups testers

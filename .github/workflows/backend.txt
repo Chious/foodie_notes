@@ -1,0 +1,32 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+
+env:
+  # 後端專屬環境變數
+  ZEABUR_API_KEY: ${{ secrets.ZEABUR_API_KEY }}
+  ZEABUR_SERVICE_ID: ${{ secrets.ZEABUR_SERVICE_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend    # 切換到後端目錄
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build -t foodie_note-backend:${{ github.sha }} .
+
+      - name: Deploy to Zeabur
+        run: |
+          curl -X POST https://api.zeabur.com/deploy \
+            -H "Authorization: Bearer $ZEABUR_API_KEY" \
+            -d '{"serviceId": "${{ env.ZEABUR_SERVICE_ID }}"}'
