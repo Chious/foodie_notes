@@ -8,6 +8,7 @@ import '../screens/stats/stats_screen.dart';
 import '../screens/food_search/food_search_screen.dart';
 import '../screens/body_data/body_data_screen.dart';
 import '../screens/scanner/scanner_screen.dart';
+import '../screens/scanner/ai_result_screen.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -66,6 +67,12 @@ final appRouter = GoRouter(
       path: '/scanner',
       parentNavigatorKey: _rootNavigatorKey,
       builder: (context, state) => const ScannerScreen(),
+      routes: [
+        GoRoute(
+          path: 'result',
+          builder: (context, state) => const AiResultScreen(),
+        ),
+      ],
     ),
   ],
 );
