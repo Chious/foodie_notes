@@ -8,7 +8,13 @@ import { RecognizeModule } from './recognize/recognize.module.js';
 import { FoodDbModule } from './food-db/food-db.module.js';
 
 @Module({
-  imports: [PrismaModule, AuthModule, FoodModule, RecognizeModule, FoodDbModule],
+  imports: [
+    PrismaModule,
+    AuthModule,
+    FoodModule,
+    RecognizeModule,
+    FoodDbModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
