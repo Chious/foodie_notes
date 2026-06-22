@@ -11,7 +11,8 @@ export class AuthController {
   @Post('login')
   @ApiOperation({ summary: '登入驗證，回傳 API Token' })
   @ApiResponse({ status: 200, type: LoginResponseDto })
-  login(@Body() _loginDto: LoginDto): LoginResponseDto {
+  login(@Body() loginDto: LoginDto): LoginResponseDto {
+    void loginDto;
     return this.authService.login();
   }
 }

@@ -67,3 +67,16 @@ model Verification {
 
   @@map("verification")
 }
+
+model FoodCache {
+  id        String   @id @default(cuid())
+  cacheKey  String   @unique
+  source    String
+  data      Json
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([expiresAt])
+  @@map("food_cache")
+}

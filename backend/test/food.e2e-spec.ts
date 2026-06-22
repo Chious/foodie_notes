@@ -16,7 +16,7 @@ const mockCache = {
   set: vi.fn().mockResolvedValue(undefined),
 };
 
-describe('AppController (e2e)', () => {
+describe('FoodController (e2e)', () => {
   let app: INestApplication;
 
   beforeAll(async () => {
@@ -43,10 +43,34 @@ describe('AppController (e2e)', () => {
     await app.close();
   });
 
-  it('GET / 回傳 Hello World!', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  it('GET /api/food/search?q=雞胸肉 回傳 TFDA 來源的搜尋結果', async () => {
+    const res = await request(app.getHttpServer())
+      .get('/api/food/search')
+      .query({ q: '雞胸肉' })
+      .expect(200);
+
+    expect(res.body.items).toBeInstanceOf(Array);
+    expect(res.body.items.length).toBeGreaterThan(0);
+    expect(res.body.items[0].source).toBe('tfda');
+    expect(res.body.total).toBeGreaterThan(0);
+  });
+
+  it('GET /api/food/search?q= 回傳空結果', async () => {
+    const res = await request(app.getHttpServer())
+      .get('/api/food/search')
+      .query({ q: '' })
+      .expect(200);
+
+    expect(res.body.items).toEqual([]);
+  });
+
+  it('GET /api/food/barcode/invalid 回傳 found: false', async () => {
+    const res = await request(app.getHttpServer())
+      .get('/api/food/barcode/invalid')
+      .expect(200);
+
+    expect(res.body.found).toBe(false);
+    expect(res.body.item).toBeNull();
+    expect(res.body.source).toBeNull();
   });
 });
