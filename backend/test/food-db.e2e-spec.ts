@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { AppModule } from '../src/app.module.js';
 import { PrismaService } from '../src/prisma/prisma.service.js';
-import { FoodCacheService } from '../src/food-cache/food-cache.service.js';
+import { FoodCacheService } from '../src/food/cache/food-cache.service.js';
 
 const mockPrisma = {
   client: { foodCache: { findUnique: vi.fn(), upsert: vi.fn(), deleteMany: vi.fn() } },
@@ -43,9 +43,9 @@ describe('FoodDbController (e2e)', () => {
     await app.close();
   });
 
-  it('GET /api/food-db/version 回傳正確版本與筆數', async () => {
+  it('GET /api/food/db/version 回傳正確版本與筆數', async () => {
     const res = await request(app.getHttpServer())
-      .get('/api/food-db/version')
+      .get('/api/food/db/version')
       .expect(200);
 
     expect(res.body.version).toBe('2025-UPDATE1');
@@ -53,9 +53,9 @@ describe('FoodDbController (e2e)', () => {
     expect(res.body.sizeBytes).toBeGreaterThan(0);
   });
 
-  it('GET /api/food-db/download 回傳 stub 狀態', async () => {
+  it('GET /api/food/db/download 回傳 stub 狀態', async () => {
     const res = await request(app.getHttpServer())
-      .get('/api/food-db/download')
+      .get('/api/food/db/download')
       .expect(200);
 
     expect(res.body.status).toBe('stub');

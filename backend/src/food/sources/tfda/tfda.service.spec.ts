@@ -151,50 +151,46 @@ describe('TfdaService', () => {
     await service.onModuleInit();
   });
 
-  describe('search()', () => {
-    it('空白查詢回傳空結果', () => {
-      expect(service.search('')).toEqual({ items: [], total: 0 });
+  describe('fuzzySearch()', () => {
+    it('空白查詢回傳空陣列', () => {
+      expect(service.fuzzySearch('')).toEqual([]);
     });
 
-    it('精確匹配 nameZh 回傳最佳結果', () => {
-      const result = service.search('白飯');
-      expect(result.items).toHaveLength(1);
-      expect(result.items[0].name).toBe('白飯');
+    it('精確匹配 nameZh 排在第一', () => {
+      const result = service.fuzzySearch('白飯');
+      expect(result.length).toBeGreaterThan(0);
+      expect(result[0].name).toBe('白飯');
     });
 
-    it('透過同義詞展開匹配（去皮清肉 → 雞胸肉）', () => {
-      const result = service.search('去皮清肉');
-      expect(result.items[0].name).toBe('雞胸肉');
+    it('模糊搜尋回傳多筆結果', () => {
+      const result = service.fuzzySearch('雞');
+      expect(result.length).toBe(2);
+      expect(result.map((r) => r.name)).toContain('雞胸肉');
+      expect(result.map((r) => r.name)).toContain('雞腿');
     });
 
-    it('子字串匹配回傳最相關的結果', () => {
-      const result = service.search('雞');
-      expect(result.items).toHaveLength(1);
-      expect(['雞胸肉', '雞腿']).toContain(result.items[0].name);
+    it('結果依相關度排序（精確匹配 > 子字串匹配）', () => {
+      const result = service.fuzzySearch('雞胸肉');
+      expect(result[0].name).toBe('雞胸肉');
+    });
+
+    it('透過同義詞展開匹配', () => {
+      const result = service.fuzzySearch('去皮清肉');
+      expect(result[0].name).toBe('雞胸肉');
+    });
+
+    it('limit 參數限制回傳數量', () => {
+      const result = service.fuzzySearch('雞', 1);
+      expect(result).toHaveLength(1);
     });
 
     it('查無結果回傳空陣列', () => {
-      const result = service.search('不存在的食物');
-      expect(result.items).toEqual([]);
-      expect(result.total).toBe(0);
+      expect(service.fuzzySearch('不存在的食物')).toEqual([]);
     });
 
-    it('逗號分隔支援多食材查詢', () => {
-      const result = service.search('白飯,花椰菜');
-      expect(result.items).toHaveLength(2);
-      expect(result.items[0].name).toBe('白飯');
-      expect(result.items[1].name).toBe('花椰菜');
-    });
-
-    it('多食材查詢中無匹配的項目被過濾', () => {
-      const result = service.search('白飯,不存在的食物,花椰菜');
-      expect(result.items).toHaveLength(2);
-      expect(result.total).toBe(2);
-    });
-
-    it('逗號分隔的 commonName 各別匹配', () => {
-      const result = service.search('白米飯');
-      expect(result.items[0].name).toBe('白飯');
+    it('commonName 子字串也能匹配', () => {
+      const result = service.fuzzySearch('白米飯');
+      expect(result[0].name).toBe('白飯');
     });
   });
 

@@ -2,7 +2,7 @@ import type {
   FsSearchFood,
   FsServing,
 } from './interfaces/fat-secret.interface.js';
-import type { FoodItemDto } from '../food/dto/food-search.dto.js';
+import type { FoodItemDto } from '../../dto/food-search.dto.js';
 
 export function ensureArray<T>(value: T | T[] | undefined): T[] {
   if (value === undefined || value === null) return [];

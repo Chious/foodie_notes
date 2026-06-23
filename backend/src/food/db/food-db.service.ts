@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TfdaService } from '../tfda/tfda.service.js';
+import { TfdaService } from '../sources/tfda/tfda.service.js';
 import { FoodDbVersionDto, FoodDbDownloadDto } from './dto/food-db.dto.js';
 
 @Injectable()

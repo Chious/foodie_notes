@@ -1,5 +1,5 @@
 import type { TfdaFoodItem } from './interfaces/tfda-food-item.interface.js';
-import type { FoodItemDto } from '../food/dto/food-search.dto.js';
+import type { FoodItemDto } from '../../dto/food-search.dto.js';
 
 export function tfdaToFoodItem(item: TfdaFoodItem): FoodItemDto {
   return {

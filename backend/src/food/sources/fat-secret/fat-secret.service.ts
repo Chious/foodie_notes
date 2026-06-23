@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { FoodCacheService } from '../food-cache/food-cache.service.js';
+import { FoodCacheService } from '../../cache/food-cache.service.js';
 import type {
   FsTokenResponse,
   FsSearchResponse,
@@ -12,7 +12,7 @@ import {
   fsSearchToFoodItem,
   fsServingToFoodItem,
 } from './fat-secret.utils.js';
-import type { FoodItemDto } from '../food/dto/food-search.dto.js';
+import type { FoodItemDto } from '../../dto/food-search.dto.js';
 
 @Injectable()
 export class FatSecretService {

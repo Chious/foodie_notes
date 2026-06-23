@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
 import { FoodDbService } from './food-db.service.js';
-import { TfdaService } from '../tfda/tfda.service.js';
+import { TfdaService } from '../sources/tfda/tfda.service.js';
 
 const mockTfda = { getItemCount: vi.fn().mockReturnValue(2213) };
 

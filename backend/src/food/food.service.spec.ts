@@ -1,10 +1,10 @@
 import { Test } from '@nestjs/testing';
 import { FoodService } from './food.service.js';
-import { TfdaService } from '../tfda/tfda.service.js';
-import { OpenFoodFactsService } from '../open-food-facts/open-food-facts.service.js';
-import { FatSecretService } from '../fat-secret/fat-secret.service.js';
+import { TfdaService } from './sources/tfda/tfda.service.js';
+import { OpenFoodFactsService } from './sources/open-food-facts/open-food-facts.service.js';
+import { FatSecretService } from './sources/fat-secret/fat-secret.service.js';
 
-const mockTfda = { search: vi.fn() };
+const mockTfda = { fuzzySearch: vi.fn() };
 const mockOff = { search: vi.fn(), findByBarcode: vi.fn() };
 const mockFs = { search: vi.fn(), findByBarcode: vi.fn() };
 
@@ -51,8 +51,8 @@ describe('FoodService', () => {
   });
 
   describe('search()', () => {
-    it('中文查詢只回傳 TFDA 結果，不查詢 OFF', async () => {
-      mockTfda.search.mockReturnValue({ items: [tfdaItem], total: 1 });
+    it('中文查詢回傳 TFDA 模糊搜尋結果，不查詢 OFF', async () => {
+      mockTfda.fuzzySearch.mockReturnValue([tfdaItem]);
 
       const result = await service.search('雞胸肉');
       expect(result.items).toHaveLength(1);
@@ -60,8 +60,16 @@ describe('FoodService', () => {
       expect(mockOff.search).not.toHaveBeenCalled();
     });
 
+    it('中文查詢可回傳多筆模糊結果', async () => {
+      const tfdaItem2 = { ...tfdaItem, id: 'tfda-A002', name: '雞胸肉(水煮)' };
+      mockTfda.fuzzySearch.mockReturnValue([tfdaItem, tfdaItem2]);
+
+      const result = await service.search('雞胸肉');
+      expect(result.items).toHaveLength(2);
+    });
+
     it('英文查詢 TFDA 無結果時用 OFF 補充', async () => {
-      mockTfda.search.mockReturnValue({ items: [], total: 0 });
+      mockTfda.fuzzySearch.mockReturnValue([]);
       mockOff.search.mockResolvedValue([offItem]);
 
       const result = await service.search('chocolate');
@@ -70,19 +78,19 @@ describe('FoodService', () => {
     });
 
     it('OFF 補充失敗時仍回傳 TFDA 結果', async () => {
-      mockTfda.search.mockReturnValue({ items: [], total: 0 });
+      mockTfda.fuzzySearch.mockReturnValue([]);
       mockOff.search.mockRejectedValue(new Error('Network error'));
 
       const result = await service.search('chocolate');
       expect(result.items).toHaveLength(0);
     });
 
-    it('正確傳遞 query 參數給 TFDA', async () => {
-      mockTfda.search.mockReturnValue({ items: [], total: 0 });
+    it('正確傳遞 query 和 limit 給 TFDA fuzzySearch', async () => {
+      mockTfda.fuzzySearch.mockReturnValue([]);
       mockOff.search.mockResolvedValue([]);
 
-      await service.search('test');
-      expect(mockTfda.search).toHaveBeenCalledWith('test');
+      await service.search('test', 1, 10);
+      expect(mockTfda.fuzzySearch).toHaveBeenCalledWith('test', 10);
     });
   });
 

@@ -15,8 +15,8 @@ import {
 import { RecognizeService } from './recognize.service.js';
 import { RecognizeResponseDto } from './dto/recognize.dto.js';
 
-@ApiTags('Recognize')
-@Controller('recognize')
+@ApiTags('Food / Recognize')
+@Controller('food/recognize')
 export class RecognizeController {
   constructor(private readonly recognizeService: RecognizeService) {}
 

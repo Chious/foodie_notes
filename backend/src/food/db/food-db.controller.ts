@@ -3,8 +3,8 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { FoodDbService } from './food-db.service.js';
 import { FoodDbVersionDto, FoodDbDownloadDto } from './dto/food-db.dto.js';
 
-@ApiTags('Food DB')
-@Controller('food-db')
+@ApiTags('Food / DB')
+@Controller('food/db')
 export class FoodDbController {
   constructor(private readonly foodDbService: FoodDbService) {}
 

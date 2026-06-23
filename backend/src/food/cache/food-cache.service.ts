@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { z } from 'zod';
-import type { Prisma } from '../generated/prisma/client.js';
-import { PrismaService } from '../prisma/prisma.service.js';
+import type { Prisma } from '../../generated/prisma/client.js';
+import { PrismaService } from '../../prisma/prisma.service.js';
 
 const FoodItemSchema = z.object({
   id: z.string(),

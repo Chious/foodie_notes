@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { TfdaService } from '../tfda/tfda.service.js';
-import { OpenFoodFactsService } from '../open-food-facts/open-food-facts.service.js';
-import { FatSecretService } from '../fat-secret/fat-secret.service.js';
+import { TfdaService } from './sources/tfda/tfda.service.js';
+import { OpenFoodFactsService } from './sources/open-food-facts/open-food-facts.service.js';
+import { FatSecretService } from './sources/fat-secret/fat-secret.service.js';
 import type { FoodSearchResponseDto } from './dto/food-search.dto.js';
 import type { BarcodeResponseDto } from './dto/food-barcode.dto.js';
 
@@ -22,8 +22,7 @@ export class FoodService {
     page = 1,
     limit = 20,
   ): Promise<FoodSearchResponseDto> {
-    const tfdaResult = this.tfda.search(q);
-    const items = [...tfdaResult.items];
+    const items = this.tfda.fuzzySearch(q, limit);
 
     const isChinese = CJK_REGEX.test(q);
     if (!isChinese && items.length < limit) {

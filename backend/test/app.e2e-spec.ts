@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { AppModule } from '../src/app.module.js';
 import { PrismaService } from '../src/prisma/prisma.service.js';
-import { FoodCacheService } from '../src/food-cache/food-cache.service.js';
+import { FoodCacheService } from '../src/food/cache/food-cache.service.js';
 
 const mockPrisma = {
   client: { foodCache: { findUnique: vi.fn(), upsert: vi.fn(), deleteMany: vi.fn() } },

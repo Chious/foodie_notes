@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
 import { FoodCacheService } from './food-cache.service.js';
-import { PrismaService } from '../prisma/prisma.service.js';
+import { PrismaService } from '../../prisma/prisma.service.js';
 
 const mockPrisma = {
   client: {

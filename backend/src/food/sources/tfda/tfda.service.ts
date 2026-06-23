@@ -3,7 +3,7 @@ import path from 'node:path';
 import type { TfdaFoodItem } from './interfaces/tfda-food-item.interface.js';
 import { tfdaToFoodItem, cellToString, toNumber } from './tfda.utils.js';
 import { FOOD_SYNONYMS } from './data/synonyms.js';
-import type { FoodItemDto } from '../food/dto/food-search.dto.js';
+import type { FoodItemDto } from '../../dto/food-search.dto.js';
 
 const EXCEL_FILE = '食品營養成分資料庫2025版UPDATE1.xlsx';
 
@@ -95,16 +95,23 @@ export class TfdaService implements OnModuleInit {
     }
   }
 
-  search(query: string): { items: FoodItemDto[]; total: number } {
+  fuzzySearch(query: string, limit = 20): FoodItemDto[] {
     const q = query.trim();
-    if (!q) return { items: [], total: 0 };
+    if (!q) return [];
 
-    const terms = q.split(',').map((t) => t.trim()).filter(Boolean);
-    const items = terms
-      .map((term) => this.findBestMatch(term))
-      .filter((item): item is FoodItemDto => item !== null);
+    const searchTerms = [q, ...(this.reverseIndex.get(q) ?? [])];
+    const scored: { food: TfdaFoodItem; score: number }[] = [];
 
-    return { items, total: items.length };
+    for (const food of this.foods) {
+      const score = this.scoreMatch(food, q, searchTerms);
+      if (score > 0) {
+        scored.push({ food, score });
+      }
+    }
+
+    scored.sort((a, b) => b.score - a.score);
+
+    return scored.slice(0, limit).map(({ food }) => tfdaToFoodItem(food));
   }
 
   findBestMatch(term: string): FoodItemDto | null {

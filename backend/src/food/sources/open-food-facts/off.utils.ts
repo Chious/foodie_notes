@@ -1,5 +1,5 @@
 import type { OffProduct } from './interfaces/off-product.interface.js';
-import type { FoodItemDto } from '../food/dto/food-search.dto.js';
+import type { FoodItemDto } from '../../dto/food-search.dto.js';
 
 export function offToFoodItem(product: OffProduct): FoodItemDto {
   const n = product.nutriments ?? {};

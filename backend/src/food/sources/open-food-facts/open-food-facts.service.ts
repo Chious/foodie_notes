@@ -1,12 +1,12 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { FoodCacheService } from '../food-cache/food-cache.service.js';
+import { FoodCacheService } from '../../cache/food-cache.service.js';
 import type {
   OffProductResponse,
   OffSearchResponse,
 } from './interfaces/off-product.interface.js';
 import { offToFoodItem } from './off.utils.js';
-import type { FoodItemDto } from '../food/dto/food-search.dto.js';
+import type { FoodItemDto } from '../../dto/food-search.dto.js';
 
 @Injectable()
 export class OpenFoodFactsService {

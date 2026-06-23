@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { ConfigService } from '@nestjs/config';
 import { OpenFoodFactsService } from './open-food-facts.service.js';
-import { FoodCacheService } from '../food-cache/food-cache.service.js';
+import { FoodCacheService } from '../../cache/food-cache.service.js';
 
 const mockCache = {
   get: vi.fn().mockResolvedValue(null),
