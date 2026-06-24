@@ -16,7 +16,7 @@ const mockCache = {
   set: vi.fn().mockResolvedValue(undefined),
 };
 
-describe('AppController (e2e)', () => {
+describe('FoodDbController (e2e)', () => {
   let app: INestApplication;
 
   beforeAll(async () => {
@@ -43,10 +43,21 @@ describe('AppController (e2e)', () => {
     await app.close();
   });
 
-  it('GET / 回傳 Hello World!', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  it('GET /api/food/db/version 回傳正確版本與筆數', async () => {
+    const res = await request(app.getHttpServer())
+      .get('/api/food/db/version')
+      .expect(200);
+
+    expect(res.body.version).toBe('2025-UPDATE1');
+    expect(res.body.recordCount).toBeGreaterThan(0);
+    expect(res.body.sizeBytes).toBeGreaterThan(0);
+  });
+
+  it('GET /api/food/db/download 回傳 stub 狀態', async () => {
+    const res = await request(app.getHttpServer())
+      .get('/api/food/db/download')
+      .expect(200);
+
+    expect(res.body.status).toBe('stub');
   });
 });
