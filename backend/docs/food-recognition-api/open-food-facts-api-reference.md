@@ -4,7 +4,7 @@
 - **Base URL**：`https://world.openfoodfacts.org`
 - **官方文件**：https://openfoodfacts.github.io/openfoodfacts-server/api/
 - **API 教學**：https://openfoodfacts.github.io/openfoodfacts-server/api/tutorial-off-api/
-- **關聯 ADR**：[ADR-003](../../frontend/docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
+- **關聯 ADR**：[ADR-003](../../docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
 
 ## 概述
 

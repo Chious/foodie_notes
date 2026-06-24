@@ -4,7 +4,7 @@
 - **Base URL**：`https://platform.fatsecret.com/rest/server.api`
 - **官方文件**：https://platform.fatsecret.com/docs/guides
 - **開發者註冊**：https://platform.fatsecret.com/
-- **關聯 ADR**：[ADR-003](../../frontend/docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
+- **關聯 ADR**：[ADR-003](../../docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
 
 ## 概述
 

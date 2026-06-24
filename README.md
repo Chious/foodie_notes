@@ -56,4 +56,4 @@ npm run test             # 執行測試
 
 ## 文件
 
-架構決策紀錄（ADR）位於 `frontend/docs/ADR/`。
+架構決策紀錄（ADR）位於 `docs/ADR/`。

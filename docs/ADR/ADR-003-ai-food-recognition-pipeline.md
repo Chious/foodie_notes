@@ -2,7 +2,7 @@
 
 - **狀態**: Revised
 - **日期**: 2026-06-20（原始: 2026-06-18）
-- **關聯**: [ADR-001](ADR-001-app-user-flow.md), [ADR-002](ADR-002-client-server-architecture.md)
+- **關聯**: [ADR-001](ADR-001-app-user-flow.md), [ADR-002](ADR-002-client-server-architecture.md), [ADR-004](ADR-004-taiwan-food-data-pipeline.md)
 
 ## Context
 
@@ -105,9 +105,10 @@ LLM 回傳的食物名稱透過 fuzzy matching 對應到 TFDA 資料庫，取得
 - **Phase 2**：若比對率不足，再考慮 embedding-based semantic search
 
 **比對失敗時的 Fallback**：
-1. 嘗試 Open Food Facts API 搜尋
-2. 若仍無匹配，回傳 LLM 估算的營養數據，標記 `source: "llm_estimate"`（未驗證）
-3. 引導使用者手動搜尋或建立自訂食物
+1. 查詢爬蟲資料庫（連鎖餐廳 + 包裝食品，詳見 [ADR-004](ADR-004-taiwan-food-data-pipeline.md)）
+2. 嘗試 Open Food Facts API 搜尋
+3. 若仍無匹配，回傳 LLM 估算的營養數據，標記 `source: "llm_estimate"`（未驗證）
+4. 引導使用者手動搜尋或建立自訂食物
 
 #### 4.1 食物資料快取策略
 
@@ -140,8 +141,9 @@ food_cache
 | 來源 | 匯入方式 | 快取過期 | 說明 |
 |------|---------|---------|------|
 | **TFDA** | 全量匯入（~2000 筆） | 90 天 | 政府資料庫更新慢，定期同步即可。啟動時載入記憶體建立 fuzzy match 索引 |
+| **爬蟲資料庫** | 定期全量匯入 | 不過期（重新爬取時更新） | 自建權威資料，存於獨立 `food_item` 表，直接 PostgreSQL 查詢，無需快取層 |
 | **Open Food Facts** | 按需快取（查過才存） | 30 天 | 資料量數百萬筆，無法全量匯入。以條碼查詢為主，查到的結果存入快取 |
-| **FatSecret** | 按需快取（查過才存） | 30 天 | 商業 API 有 rate limit，**必須快取**以避免浪費額度與觸發限流 |
+| **FatSecret** | 按需快取（查過才存） | 30 天 | 商業 API 有 rate limit，**必須快取**。僅用於條碼查詢 fallback |
 
 **LLM 名稱 → 食物對應快取（`food_name_mapping` 表）**
 
@@ -167,22 +169,25 @@ LLM 回傳「白飯」
     → 有：直接取 food_cache_id 查營養 → 完成（<5ms）
     → 無：依序查詢各來源
       → 1. TFDA fuzzy match（記憶體內，<10ms）
-      → 2. 若無匹配 → Open Food Facts API（結果存入 food_cache）
-      → 3. 若仍無 → FatSecret API（結果存入 food_cache）
-      → 4. 找到後寫入 food_name_mapping 快取
-      → 5. 全部未匹配 → 回傳 LLM 估算，標記 source: "llm_estimate"
+      → 2. 若無匹配 → 爬蟲資料庫搜尋（PostgreSQL，<20ms）
+      → 3. 若仍無 → Open Food Facts API（結果存入 food_cache）
+      → 4. 若仍無 → FatSecret API（結果存入 food_cache）
+      → 5. 找到後寫入 food_name_mapping 快取
+      → 6. 全部未匹配 → 回傳 LLM 估算，標記 source: "llm_estimate"
 ```
 
 條碼查詢也遵循同樣的快取邏輯：
 
 ```
 使用者掃描條碼 4710088412345
-  → 查 food_cache WHERE barcode = '4710088412345'：有快取？
-    → 有且未過期：直接回傳（<5ms）
-    → 無或已過期：
-      → 1. Open Food Facts API 查詢
-      → 2. 若無 → FatSecret API 查詢
-      → 3. 結果存入 food_cache
+  → 查 food_item WHERE barcode = '4710088412345'：爬蟲資料庫有？
+    → 有：直接回傳（<5ms）
+    → 無：查 food_cache WHERE barcode = '4710088412345'：有快取？
+      → 有且未過期：直接回傳（<5ms）
+      → 無或已過期：
+        → 1. Open Food Facts API 查詢
+        → 2. 若無 → FatSecret API 查詢（僅條碼）
+        → 3. 結果存入 food_cache
 ```
 
 **效益**：

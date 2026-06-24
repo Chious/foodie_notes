@@ -18,7 +18,7 @@ flutter pub get                # Install dependencies
 
 食誌 (Foodie Notes) is a diet tracking app targeting Taiwanese users. Core features: AI food recognition via photo, barcode scanning, manual food search, nutrition tracking, and body data management. Currently in **Phase 1 (UI-only)** — all data comes from `MockData` in `lib/models/mock_data.dart`, no backend or local persistence yet.
 
-The planned architecture (see `docs/ADR/`) is: Flutter + SQLite client, Node.js server for AI recognition and food database queries, deployed on Cloudflare. Android is the primary target platform.
+The planned architecture (see `../docs/ADR/`) is: Flutter + SQLite client, Node.js server for AI recognition and food database queries, deployed on Cloudflare. Android is the primary target platform.
 
 ## Architecture
 
@@ -35,4 +35,4 @@ The planned architecture (see `docs/ADR/`) is: Flutter + SQLite client, Node.js 
 - Models are plain Dart classes with `const` constructors (no code generation)
 - Screens live in `lib/screens/<feature>/` with one file per screen
 - Shared widgets live in `lib/widgets/`
-- ADRs documenting product decisions are in `docs/ADR/`
+- ADRs documenting product decisions are in `../docs/ADR/`

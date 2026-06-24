@@ -2,7 +2,7 @@
 
 - **狀態**: Proposed
 - **日期**: 2026-06-18
-- **關聯**: [ADR-001](ADR-001-app-user-flow.md), [ADR-003](ADR-003-ai-food-recognition-pipeline.md)
+- **關聯**: [ADR-001](ADR-001-app-user-flow.md), [ADR-003](ADR-003-ai-food-recognition-pipeline.md), [ADR-004](ADR-004-taiwan-food-data-pipeline.md)
 
 ## Context
 
@@ -26,7 +26,8 @@
 │     Flutter Client (SQLite) │     │       Server (Node.js)      │
 ├─────────────────────────────┤     ├─────────────────────────────┤
 │  · 飲食記錄（餐點、品項）     │     │  · 食物資料庫（多來源）       │
-│  · 常吃食物清單              │     │    OFF / FatSecret / TFDA   │
+│  · 常吃食物清單              │     │    TFDA / Crawled / OFF     │
+│                              │     │    / FatSecret(barcode only)│
 │  · 自定義食物                │     │  · AI 辨識服務               │
 │  · 精簡食物資料庫（離線搜尋） │     │  · 食物圖片儲存              │
 │  · 身體數據（體重、身高）     │     │  · 登入驗證 / API 授權       │
@@ -62,13 +63,15 @@
 
 | 來源 | 適用情境 | 條碼 | 授權 |
 |------|----------|------|------|
-| **Open Food Facts (OFF)** | 包裝食品條碼查詢、掃描營養標示擴充 | ✅ EAN-13 | 開源免費 |
-| **FatSecret API** | 台灣超商/包裝食品，條碼覆蓋率最高 | ✅ EAN-13 | 商業（免費 Tier 有次數限制） |
 | **TFDA 食品營養成分資料庫** | 原型食物（蔬菜、肉類等），AI 辨識後查營養素 | ❌ | 政府公開資料 |
+| **爬蟲資料庫 (Crawled)** | 連鎖餐廳菜單、台灣包裝食品（詳見 [ADR-004](ADR-004-taiwan-food-data-pipeline.md)） | 部分（電商商品） | 自建 |
+| **Open Food Facts (OFF)** | 包裝食品條碼查詢、掃描營養標示擴充 | ✅ EAN-13 | 開源免費 |
+| **FatSecret API** | 條碼查詢 fallback（僅限條碼，不用於名稱搜尋） | ✅ EAN-13 | 商業（免費 Tier 有次數限制） |
 
 查詢策略概要：
-- **條碼掃描**：優先查 OFF（免費）→ fallback FatSecret（覆蓋率高但有額度）→ 查無資料時引導拍攝營養標示
-- **AI 辨識 / 名稱搜尋**：優先查 TFDA（原型食物最權威）→ fallback OFF
+- **名稱搜尋**：TFDA（原型食物最權威）→ 爬蟲 DB（餐廳 + 包裝食品）→ OFF 補充
+- **條碼掃描**：爬蟲 DB → OFF（免費）→ FatSecret fallback（僅條碼）→ 查無資料時引導拍攝營養標示
+- **AI 辨識**：TFDA → 爬蟲 DB → OFF → LLM estimate
 - **離線搜尋**：查詢本地精簡資料庫
 
 #### 資料來源標注
@@ -77,9 +80,10 @@
 
 | source | 來源 |
 |--------|------|
-| `off` | Open Food Facts |
-| `fatsecret` | FatSecret API |
 | `tfda` | TFDA 食品營養成分資料庫 |
+| `crawled` | 爬蟲資料庫（連鎖餐廳、電商包裝食品） |
+| `off` | Open Food Facts |
+| `fatsecret` | FatSecret API（僅條碼查詢） |
 | `user` | 使用者自定義食物 |
 
 #### 本地精簡資料庫
@@ -120,8 +124,10 @@ Onboarding 時從 Server 下載一份精簡版食物資料庫到本地 SQLite：
 - [ ] 登入驗證方式（Email + Password / OAuth / Sign in with Apple）
 - [ ] API Rate Limiting 策略
 - [ ] SQLite schema 設計
-- [ ] FatSecret API 是否導入（取決於免費額度是否足夠初期）
+- [x] FatSecret API 定位：僅用於條碼查詢 fallback，不參與名稱搜尋（覆蓋率不足台灣食品）
 - [ ] 精簡資料庫的收錄範圍與大小上限
 - [ ] 精簡資料庫版本管理（全量 vs 增量更新）
+- [ ] 爬蟲資料更新頻率與排程策略
+- [ ] 電商平台（PCHome、PXGO）動態抓取部署方式
 
 > **備註**：查詢策略細節、快取設計、部署配置等實作層面內容，分別參見前後端各自的技術文件。

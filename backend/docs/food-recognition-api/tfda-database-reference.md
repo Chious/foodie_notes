@@ -4,7 +4,7 @@
 - **檔案位置**：`backend/assets/食品營養成分資料庫2025版UPDATE1.xlsx`
 - **官方網站**：https://consumer.fda.gov.tw/Food/TFND.aspx?nodeID=178
 - **政府開放資料**：https://data.gov.tw/dataset/8543
-- **關聯 ADR**：[ADR-003](../../frontend/docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
+- **關聯 ADR**：[ADR-003](../../docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
 
 ## 概述
 

@@ -2,7 +2,7 @@
 
 - **用途**：食物照片辨識（回傳食物名稱、估算份量、信心度）
 - **支援 Provider**：Google Gemini / OpenAI GPT / Anthropic Claude / Hugging Face（開源 VLM）
-- **關聯 ADR**：[ADR-003](../../frontend/docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
+- **關聯 ADR**：[ADR-003](../../docs/ADR/ADR-003-ai-food-recognition-pipeline.md)
 
 ## 概述
 
